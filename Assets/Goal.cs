@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
     public bool isLeft;
 
     public GameObject manager;
+    public GameObject Bot;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Goal : MonoBehaviour
             if(isLeft)
             {
                 manager.GetComponent<Manager>().P2Score();
+                Bot.GetComponent<Player>().reward(0.1f);
             }
             else
             {

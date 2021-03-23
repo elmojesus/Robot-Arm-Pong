@@ -65,23 +65,22 @@ public class Player : Agent
        
     }
 
-    public void sendToArduino(float vertical, float horizontal){
-        byte[] message = new byte[6];
+    public void reward(float amount)
+    {
+        AddReward(amount);
+    }
+
+    public void sendToArduino(float vertical){
+        byte[] message = new byte[4];
         message[0] = 254;
-        message[5] = 255;
+        message[3] = 255;
 
         //Debug.Log((int)(vertical*253));
         int converted_vertical_byte = Mathf.Abs((int)(vertical * 253));
         byte vertical_byte = (byte)converted_vertical_byte;
-
-        int converted_horizontal_byte = Mathf.Abs((int)(horizontal * 253));
-        byte horizontal_byte = (byte)converted_horizontal_byte;
-        //Debug.Log((int)(horizontal*253));
         
         message[1] = (byte)(vertical < 0 ? 0 : 1);
         message[2] = vertical_byte;
-        message[3] = (byte)(horizontal < 0 ? 1 : 0);
-        message[4] = horizontal_byte;
 
         //Serial_port.Open();
         Serial_port.Write(message, 0, 6);
