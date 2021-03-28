@@ -21,6 +21,14 @@ public class Player : Agent
         Serial_port.Close();
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "Ball")
+        {
+            AddReward(0.1f);
+        }
+    }
+
     public override void Initialize()
     {
         Serial_port.Open();
@@ -66,7 +74,17 @@ public class Player : Agent
         //actionsOut.ContinuousActionsOut[1] = right[1];
     }
 
-    public void reward(float amount)
+    public void end()
+    {
+        EndEpisode();
+    }
+
+    public void Setreward(float amount)
+    {
+        SetReward(amount);
+    }
+
+    public void Addreward(float amount)
     {
         AddReward(amount);
     }

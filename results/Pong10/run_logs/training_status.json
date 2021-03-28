@@ -1,0 +1,23 @@
+{
+    "Paddle": {
+        "checkpoints": [
+            {
+                "steps": 54400,
+                "file_path": "results\\Pong10\\Paddle\\Paddle-54400.onnx",
+                "reward": null,
+                "creation_time": 1616953983.0289621
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 54400,
+            "file_path": "results\\Pong10\\Paddle.onnx",
+            "reward": null,
+            "creation_time": 1616953983.0289621
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.25.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

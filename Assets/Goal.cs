@@ -27,12 +27,14 @@ public class Goal : MonoBehaviour
             if(isLeft)
             {
                 manager.GetComponent<Manager>().P2Score();
-                Bot.GetComponent<Player>().reward(0.1f);
+                Bot.GetComponent<Player>().Setreward(1f);
             }
             else
             {
                 manager.GetComponent<Manager>().P1Score();
             }
+            
+            Bot.GetComponent<Player>().end();
         }
     }
 }
