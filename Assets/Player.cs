@@ -46,7 +46,7 @@ public class Player : Agent
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
-        //Debug.Log(continuousActions[0]);
+        Debug.Log(continuousActions[0]);
         rb.velocity = new Vector2(rb.velocity.x, speed * continuousActions[0]);
         sendToArduino(continuousActions[0]);
     }
