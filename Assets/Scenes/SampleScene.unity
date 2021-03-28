@@ -777,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeft: 0
   manager: {fileID: 1542766582}
+  Bot: {fileID: 2040154126}
 --- !u!1 &740866142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1418,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  ball: {fileID: 0}
   rb: {fileID: 2040154127}
   speed: 8
 --- !u!1 &2049754757
@@ -1609,6 +1611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeft: 1
   manager: {fileID: 1542766582}
+  Bot: {fileID: 2040154126}
 --- !u!1 &2114296369
 GameObject:
   m_ObjectHideFlags: 0
