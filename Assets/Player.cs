@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using System.IO.Ports;
 
 
 public class Player : Agent
 {
+    public GameObject Ball;
     public Rigidbody2D ball;
     public Rigidbody2D rb;
     public float speed;
@@ -24,21 +26,6 @@ public class Player : Agent
         Serial_port.Open();
     }
 
-    public override void OnActionReceived(float[] vectorAction)
-    {
-        rb.velocity = new Vector2(rb.velocity.x, speed * vectorAction[1]);
-    }
-
-    public override void OnEpisodeBegin()
-    {
-       
-    } 
-
-    public void Reset()
-    {
-
-    }
-
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(ball.position.x);
@@ -48,21 +35,35 @@ public class Player : Agent
         sensor.AddObservation(ball.velocity);
     }
 
-    public override void Heuristic(float[] actionsOut)
+    public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-       var gamepad = Gamepad.current;
+        var continuousActions = actionBuffers.ContinuousActions;
+        //Debug.Log(continuousActions[0]);
+        rb.velocity = new Vector2(rb.velocity.x, speed * continuousActions[0]);
+        sendToArduino(continuousActions[0]);
+    }
+
+    public override void OnEpisodeBegin()
+    {
+       Ball.GetComponent<Ball>().kaboom();
+    } 
+
+    public void Reset()
+    {
+
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActionsOut = actionsOut.ContinuousActions;
+        var gamepad = Gamepad.current;
         if (gamepad == null)
             return; // No gamepad connected.
 
         Vector2 right = gamepad.rightStick.ReadValue();
 
-        actionsOut[0] = right[0];
-        actionsOut[1] = right[1];
-    }
-
-    public void FixedUpdate()
-    {
-       
+        continuousActionsOut[0] = right[1]; //vert
+        //actionsOut.ContinuousActionsOut[1] = right[1];
     }
 
     public void reward(float amount)
@@ -83,7 +84,7 @@ public class Player : Agent
         message[2] = vertical_byte;
 
         //Serial_port.Open();
-        Serial_port.Write(message, 0, 6);
+        Serial_port.Write(message, 0, 4);
         //Serial_port.Close();
     }
 }

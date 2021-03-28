@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
         kaboom();
     }
 
-    void kaboom()
+    public void kaboom()
     {
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
