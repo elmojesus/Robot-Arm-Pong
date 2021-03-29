@@ -2,24 +2,6 @@
     "Paddle": {
         "checkpoints": [
             {
-                "steps": 499963,
-                "file_path": "results\\Pong17\\Paddle\\Paddle-499963.onnx",
-                "reward": 0.6772727349942381,
-                "creation_time": 1616981522.1269383
-            },
-            {
-                "steps": 500102,
-                "file_path": "results\\Pong17\\Paddle\\Paddle-500102.onnx",
-                "reward": 0.6866666747464074,
-                "creation_time": 1616981522.2214434
-            },
-            {
-                "steps": 999970,
-                "file_path": "results\\Pong17\\Paddle\\Paddle-999970.onnx",
-                "reward": 0.9323529574800941,
-                "creation_time": 1616985112.4597306
-            },
-            {
                 "steps": 1000109,
                 "file_path": "results\\Pong17\\Paddle\\Paddle-1000109.onnx",
                 "reward": 0.9371428736618587,
@@ -30,13 +12,31 @@
                 "file_path": "results\\Pong17\\Paddle\\Paddle-1157231.onnx",
                 "reward": null,
                 "creation_time": 1616987792.363368
+            },
+            {
+                "steps": 1334583,
+                "file_path": "results\\Pong17\\Paddle\\Paddle-1334583.onnx",
+                "reward": 1.0653061424286998,
+                "creation_time": 1616989267.4327412
+            },
+            {
+                "steps": 1499904,
+                "file_path": "results\\Pong17\\Paddle\\Paddle-1499904.onnx",
+                "reward": 1.0750000178813934,
+                "creation_time": 1616990533.3855538
+            },
+            {
+                "steps": 1500043,
+                "file_path": "results\\Pong17\\Paddle\\Paddle-1500043.onnx",
+                "reward": 1.075438614477191,
+                "creation_time": 1616990533.5000837
             }
         ],
         "final_checkpoint": {
-            "steps": 1157231,
+            "steps": 1500043,
             "file_path": "results\\Pong17\\Paddle.onnx",
-            "reward": null,
-            "creation_time": 1616987792.363368
+            "reward": 1.075438614477191,
+            "creation_time": 1616990533.5000837
         }
     },
     "metadata": {
