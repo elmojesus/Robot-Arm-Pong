@@ -1,5 +1,5 @@
 # Robot-Arm-Pong
-Continuation of [other project](github.com/elmojesus/robot-arm) but with pong
+Continuation of [other project](https://github.com/elmojesus/robot-arm) but with pong
 Unity mlagents trained on pong with arudino controlling xbox controller joystick
 
 right player is trained network, which was trained against left player
