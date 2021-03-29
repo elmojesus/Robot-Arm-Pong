@@ -1,0 +1,29 @@
+{
+    "Paddle": {
+        "checkpoints": [
+            {
+                "steps": 499966,
+                "file_path": "results\\Pong13\\Paddle\\Paddle-499966.onnx",
+                "reward": 0.0,
+                "creation_time": 1616958723.7268696
+            },
+            {
+                "steps": 500030,
+                "file_path": "results\\Pong13\\Paddle\\Paddle-500030.onnx",
+                "reward": 0.0,
+                "creation_time": 1616958723.793866
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500030,
+            "file_path": "results\\Pong13\\Paddle.onnx",
+            "reward": 0.0,
+            "creation_time": 1616958723.793866
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.25.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

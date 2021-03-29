@@ -21,10 +21,11 @@ public class Player : Agent
         Serial_port.Close();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.name == "Ball")
         {
+            Debug.Log("hit");
             AddReward(0.1f);
         }
     }
@@ -40,13 +41,14 @@ public class Player : Agent
         sensor.AddObservation(ball.position.y);
         sensor.AddObservation(rb.position.x);
         sensor.AddObservation(rb.position.y);
+        sensor.AddObservation(rb.velocity);
         sensor.AddObservation(ball.velocity);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         var continuousActions = actionBuffers.ContinuousActions;
-        Debug.Log(continuousActions[0]);
+        //Debug.Log(continuousActions[0]);
         rb.velocity = new Vector2(rb.velocity.x, speed * continuousActions[0]);
         sendToArduino(continuousActions[0]);
     }

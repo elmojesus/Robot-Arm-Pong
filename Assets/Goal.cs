@@ -26,6 +26,7 @@ public class Goal : MonoBehaviour
         {
             if(isLeft)
             {
+                Debug.Log("SCORE!!");
                 manager.GetComponent<Manager>().P2Score();
                 Bot.GetComponent<Player>().Setreward(1f);
             }
